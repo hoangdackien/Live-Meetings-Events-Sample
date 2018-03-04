@@ -16,7 +16,6 @@ class AudienceMessage extends Component {
         this.props.onChange(this.props.message.id, false);
     }
     componentDidUpdate(){
-        console.log("componentDidUpdate");
     }
     render() {
         return (

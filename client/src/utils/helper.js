@@ -2,8 +2,6 @@
 const $ = window.jQuery;
 module.exports =  {
     find_message_in_arr_by_id: function(arr, id) {
-        console.log(arr);   
-        console.log(id);
         if(!arr || arr.lengh <= 0)
             return;
         var indexer = $.map(arr, function(obj, index) {

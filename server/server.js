@@ -99,7 +99,6 @@ io.on("connection", function(socket) {
     } 
     rooms[evt_code] = new Room(evt_name, evt_code, date_from, date_to, admin_name);
     io.to(socket.id).emit("created_evt_room_ok", evt_name, evt_code, date_from, date_to, admin_name);
-    console.log("Created event room: " + evt_name + " with start_time: " + date_from + " and end time " + date_to + " and evt_code : " + evt_code);
     socket.join(evt_code);
     socket.roomID = evt_code;
     socket.highlight = 0;
@@ -157,7 +156,6 @@ io.on("connection", function(socket) {
   });
 
   socket.on("update_msg", function(msgid, msg) {
-    console.log("update_msg on server");
     var message = rooms[socket.roomID].messages[msgid];
     if(message){
       message.msg = msg;
@@ -168,8 +166,6 @@ io.on("connection", function(socket) {
   socket.on("delete_msg", function(msgid, msg) {
     var message = rooms[socket.roomID].messages[msgid];
     if(message){
-      console.log("delete_msg");
-      console.log(message.highlight);
       if(message.highlight > 0)
         --socket.highlight;
       delete rooms[socket.roomID].messages[msgid];
@@ -180,7 +176,6 @@ io.on("connection", function(socket) {
   });
 
   socket.on("highlight_msg", function(msgid) {
-    console.log(socket.highlight)
     var message = rooms[socket.roomID].messages[msgid];
     if(message){
       if(socket.highlight < 3 && message.highlight <= 0){

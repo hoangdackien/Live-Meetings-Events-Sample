@@ -27,7 +27,6 @@ class App extends Component {
     };
     const PORT = process.env.PORT || 5000;
     // Starting connect to server
-    console.log(this.socket);
     this.socket = io("http://localhost:" + PORT);
     
     this.handleCreateRoom = this.handleCreateRoom.bind(this);
@@ -112,8 +111,6 @@ class App extends Component {
   }
 
   recieveAllMessage(messages) {
-    console.log("recieveAllMessage");
-    console.log(messages);
   }
 
   handleCreateRoom(evt_name, date_from, date_to, admin_name) {
