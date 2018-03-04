@@ -1,7 +1,7 @@
 {
-  "name": "Quickchat",
-  "version": "0.0.2",
-  "description": "A disposable chatroom service built on Node and React",
+  "name": "Demo Code",
+  "version": "0.0.1",
+  "description": "Live Q&A and Polls for your Meetings & Events Server Code",
   "dependencies": {
     "express": "^4.16.2",
     "moment": "^2.21.0",
