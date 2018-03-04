@@ -1,0 +1,14 @@
+{
+  "name": "Quickchat",
+  "version": "0.0.2",
+  "description": "A disposable chatroom service built on Node and React",
+  "dependencies": {
+    "express": "^4.16.2",
+    "moment": "^2.21.0",
+    "socket.io": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  }
+}
